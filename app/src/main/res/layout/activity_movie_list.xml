@@ -30,74 +30,87 @@
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  tools:context=".ui.MovieDetailActivity">
-
-  <ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.MovieDetailActivity">
 
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
-
-      <ImageView
-        android:id="@+id/detailImageView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:adjustViewBounds="false"
-        android:contentDescription="@string/detail_image"
-        android:scaleType="fitCenter"
-        android:src="@android:drawable/btn_star_big_on" />
+        android:layout_height="match_parent">
 
-      <TextView
-        android:id="@+id/titleDetailTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        tools:text="Movie Title" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-      <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="20dp"
 
-        <TextView
-          android:id="@+id/releaseDateTextView"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_margin="8dp"
-          android:layout_weight="1"
-          android:textSize="18sp"
-          android:textStyle="bold"
-          tools:text="18-08-2009" />
+                >
 
-        <TextView
-          android:id="@+id/ratingTextView"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_margin="8dp"
-          android:layout_weight="1"
-          android:textSize="18sp"
-          android:textStyle="bold"
-          tools:text="Rating 4.5" />
-      </LinearLayout>
+                <ImageView
+                    android:id="@+id/detailImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:adjustViewBounds="false"
+                    android:contentDescription="@string/detail_image"
+                    android:scaleType="centerCrop"
+                    android:src="@android:drawable/btn_star_big_on" />
 
-      <TextView
-        android:id="@+id/summaryDetailTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:padding="8dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:text="Summary of the movie" />
-    </LinearLayout>
-  </ScrollView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:id="@+id/titleDetailTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:text="Movie Title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/releaseDateTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="18-08-2009" />
+
+                <TextView
+                    android:id="@+id/ratingTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="Rating 4.5" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/summaryDetailTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Summary of the movie" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

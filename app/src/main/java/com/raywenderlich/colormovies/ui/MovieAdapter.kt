@@ -67,7 +67,7 @@ class MovieAdapter(
   inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(movie: Movie) = with(view) {
-      //titleTextView.text = movie.originalTitle
+      titleTextView.text = movie.originalTitle
       view.setOnClickListener { listener(movie) }
       val display = windowManager.defaultDisplay
       val size = Point()
