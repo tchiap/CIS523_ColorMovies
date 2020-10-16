@@ -26,6 +26,7 @@
 
         <TextView
             android:id="@+id/titleTextView"
+            style="@style/ColorMovies.AppTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -37,6 +38,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/usernameTextInputLayout"
+            style="@style/ColorMovies.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username">
@@ -52,6 +54,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordTextInputLayout"
+            style="@style/ColorMovies.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -70,7 +73,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButton"
-            style="@style/colorMovies.TextButton"
+            style="@style/ColorMovies.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
@@ -78,6 +81,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/signupButton"
+            style="@style/ColorMovies.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
