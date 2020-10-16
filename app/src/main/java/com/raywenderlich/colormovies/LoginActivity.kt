@@ -36,6 +36,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.raywenderlich.colormovies.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.clearTask
+import org.jetbrains.anko.newTask
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class LoginActivity : AppCompatActivity() {
@@ -45,7 +47,27 @@ class LoginActivity : AppCompatActivity() {
     setContentView(R.layout.activity_login)
 
     loginButton.onClick {
-      startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+
+      //startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+
+      if (!isValidPassword(passwordEditText.text.toString())) {
+        passwordTextInputLayout.error = "Password must have at least 8 characters."
+      } else {
+        passwordTextInputLayout.error = null
+        startActivity(Intent( this@LoginActivity, MainActivity::class.java)
+          .newTask()
+          .clearTask())
+      }
+
+      passwordEditText.setOnKeyListener { _, _, _ ->
+        if (isValidPassword(passwordEditText.text.toString())) {
+          passwordTextInputLayout.error = null
+        }
+        false
+      }
     }
   }
+
+  private fun isValidPassword(password: String) = password.length >= 8 && password.isNotEmpty()
+
 }
